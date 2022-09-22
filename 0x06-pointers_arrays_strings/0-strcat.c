@@ -5,22 +5,22 @@
  *
  * @dest: string 1
  * @src: string 2
+ *
  * Return: char pointer
  */
 char *_strcat(char *dest, char *src)
 {
-	int i = 0, j = 0;
-	char *p;
+	int length, j; /* j will hold the length of the source */
 
-	while (*(dest + i) != '\0')
-		i++;
-	while (*(src + j) != '\0')
+	length = 0;
+	while (dest[length] != '\0')
 	{
-		*(dest + i) = *(src + j);
-		i++;
-		j++;
+		length++;
 	}
-	*(dest + i) = '\0';
-	p = dest;
+	for (j = 0; src[j] != '\0'; j++, length++)
+	{
+		dest[length] = src[j];
+	}
+	dest[length] = '\0';
 	return (p);
 }
