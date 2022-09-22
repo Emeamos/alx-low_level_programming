@@ -3,7 +3,6 @@
 /**
  * _strncat - function to concatenate two strings and return a new string
  * with n elements of the appended string
- *
  * @dest: string 1
  * @src: string 2
  * @n: number of chars to include from appended string
@@ -11,22 +10,17 @@
  */
 char *_strncat(char *dest, char *src, int n)
 {
-	int i, j;
+	int length, j;
 
-	i = 0;
-	j = 0;
-
-	while (dest[i] != '\0')
-		i++;
-
-	while (src[j] != '\0' && j < n)
+	length = 0;
+	while (dest[length] != '\0')
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		length++;
 	}
-
-	dest[i] = '\0';
-
+	for (j = 0; j < n && src[j] != '\0'; j++, length++)
+	{
+		dest[length] = src[j];
+	}
+	dest[length] = '\0';
 	return (p);
 }
