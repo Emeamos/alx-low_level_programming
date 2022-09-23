@@ -2,7 +2,6 @@
 
 /**
  * _strcat - function to concatenate two strings and return a new string
- *
  * @dest: string 1
  * @src: string 2
  *
@@ -22,5 +21,5 @@ char *_strcat(char *dest, char *src)
 		dest[length] = src[j];
 	}
 	dest[length] = '\0';
-	return (p);
+	return (dest);
 }
